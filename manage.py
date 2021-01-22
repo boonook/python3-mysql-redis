@@ -1,4 +1,4 @@
-# from utils.ceshi import ceshi
+from utils.ceshi import ceshi
 import configparser
 def main():
   # print('main')
@@ -12,6 +12,6 @@ def main():
   # 获取指定 key 的 value
   value = conf.get('mysql', 'host')   #根据section和value获取key值,等价于value = conf.get(conf.sections()[0], conf.options(conf.sections()[0])[0])
   print(value)
-  # ceshi()
+  ceshi()
 if __name__ == '__main__':
     main()

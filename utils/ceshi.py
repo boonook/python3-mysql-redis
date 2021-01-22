@@ -1,9 +1,8 @@
-import time  # 引入time模块
-import configparser
-import model1
-import mysqlset
-import redisset
-import handlearr
+import time  # 引入time模块\
+from utils.model1 import models1
+from utils.mysqlset import mysqlset
+from utils.redisset import redisset
+from utils.handlearr import handlearr
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -27,14 +26,10 @@ def ceshi():
   emp2 = employee('boonook2')
   emp1.dayinname()
   print(employee.count)
-  print(model1.models1())
-  mysqlset.mysqlset()
+  a = models1()
+  print(a)
+  mysqlset()
   # 链接redis
-  redisset.redisset()
-  handlearr.handlearr()
-  ####读取服务的配置信息
-  config = configparser.ConfigParser()
-  conf_file = open("../config/contants.ini")
-  config.readfp(conf_file)
-  print(config.get("baseconf","port"))
+  redisset()
+  handlearr()
 ceshi()
