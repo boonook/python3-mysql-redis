@@ -1,4 +1,5 @@
 import time  # 引入time模块
+import configparser
 import model1
 import mysqlset
 import redisset
@@ -31,4 +32,9 @@ def ceshi():
   # 链接redis
   redisset.redisset()
   handlearr.handlearr()
+  ####读取服务的配置信息
+  config = configparser.ConfigParser()
+  conf_file = open("../config/contants.ini")
+  config.readfp(conf_file)
+  print(config.get("baseconf","port"))
 ceshi()
