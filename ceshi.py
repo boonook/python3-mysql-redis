@@ -2,6 +2,7 @@ import time  # 引入time模块
 import model1
 import mysqlset
 import redisset
+import handlearr
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -29,4 +30,5 @@ def ceshi():
   mysqlset.mysqlset()
   # 链接redis
   redisset.redisset()
+  handlearr.handlearr()
 ceshi()
