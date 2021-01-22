@@ -3,6 +3,7 @@ from utils.model1 import models1
 from utils.mysqlset import mysqlset
 from utils.redisset import redisset
 from utils.handlearr import handlearr
+from utils.progrees import progrees
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -32,4 +33,16 @@ def ceshi():
   # 链接redis
   redisset()
   handlearr()
+
+
+  #打印进度条
+  # =========应用==========
+  data_size = 3030333  # 定义传输的数据，实际应用中这个值改一下就可以了
+  recv_size = 0
+  while recv_size < data_size:
+    #time.sleep(0.01)  # 模拟数据的传输延迟
+    recv_size += 1024  # 每次收1024
+    recv_per = int(100 * recv_size / data_size)  # 接收的比例
+    progrees(recv_per, width=100)  # 调用进度条函数，进度条的宽度默认设置为30
+  #打印进度条完毕
 ceshi()
