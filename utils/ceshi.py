@@ -9,6 +9,7 @@ from utils.randomdata import randomdata
 from utils.zhuangshifu import zhuangshifu
 from utils.leideshiyong import leideshiyong
 # from utils.requestsdata import requestsdata
+from utils.requestsdata2 import requestsdata2
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -70,4 +71,8 @@ def ceshi():
   print("*******************************************简易爬虫start***************************************")
   # requestsdata()
   print("*******************************************简易爬虫end***************************************")
+  # 简易爬虫2
+  print("*******************************************简易爬虫2start***************************************")
+  requestsdata2()
+  print("*******************************************简易爬虫2end***************************************")
 ceshi()
