@@ -5,6 +5,7 @@ from utils.redisset import redisset
 from utils.handlearr import handlearr
 from utils.progrees import progrees
 from utils.hanshu import hanshu
+from utils.randomdata import randomdata
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -50,4 +51,8 @@ def ceshi():
   print("*******************************************函数start***************************************")
   hanshu()
   print("*******************************************函数end***************************************")
+  #生成随机数
+  print("*******************************************生成随机数start***************************************")
+  randomdata()
+  print("*******************************************生成随机数end***************************************")
 ceshi()

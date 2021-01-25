@@ -27,3 +27,5 @@ def hanshu():
   obj6['age'] = '27'
   print('obj6',obj6)
   print('obj5',obj5)
+
+
