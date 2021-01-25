@@ -7,6 +7,7 @@ from utils.progrees import progrees
 from utils.hanshu import hanshu
 from utils.randomdata import randomdata
 from utils.zhuangshifu import zhuangshifu
+from utils.leideshiyong import leideshiyong
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -60,4 +61,8 @@ def ceshi():
   print("*******************************************装饰符的使用start***************************************")
   zhuangshifu()
   print("*******************************************装饰符的使用end***************************************")
+  # 类的使用
+  print("*******************************************类的使用start***************************************")
+  leideshiyong()
+  print("*******************************************类的使用end***************************************")
 ceshi()
