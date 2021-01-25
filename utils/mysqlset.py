@@ -15,13 +15,18 @@ def mysqlset():
   charset = conf.get('mysql', 'charset')
   # 打开数据库连接
   #连接数据库
-  db=pymysql.connect(host=host # 连接名称，默认127.0.0.1
-  ,user=user # 用户名
-  ,passwd=password # 密码
-  ,port=int(port) # 端口，默认为3306
-  ,db=db_name # 数据库名称
-  ,charset=charset # 字符编码
-  )
+  db=''
+  try:
+    db=pymysql.connect(host='127.0.0.1' # 连接名称，默认127.0.0.1
+    ,user=user # 用户名
+    ,passwd=password # 密码
+    ,port=int(port) # 端口，默认为3306
+    ,db=db_name # 数据库名称
+    ,charset=charset # 字符编码
+    )
+    print ("Succes:数据库连接成功")
+  except:
+    print ("Error:数据库连接异常")
   # # 使用cursor()方法获取操作游标
   cursor = db.cursor()
   # # SQL 查询语句

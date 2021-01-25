@@ -1,4 +1,4 @@
-user,passwd = 'hjc',111111
+user,passwd = 'zxw',1234
 def zhuangshifu():
   print("zhuangshifu")
   def auth(type):
