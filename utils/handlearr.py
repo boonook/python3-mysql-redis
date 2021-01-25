@@ -27,5 +27,5 @@ def handlearr(arr=[1,2,4,3]):
   for y in cars:
     y['id'] = 1
     print(y['year'])
-    print(y)  
+    print(y)
   print(cars)

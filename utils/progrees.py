@@ -1,6 +1,4 @@
 import time
-
-
 def progrees(percent, width=100):
     '''
     进度打印功能

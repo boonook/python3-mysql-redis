@@ -4,6 +4,7 @@ from utils.mysqlset import mysqlset
 from utils.redisset import redisset
 from utils.handlearr import handlearr
 from utils.progrees import progrees
+from utils.hanshu import hanshu
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -44,6 +45,9 @@ def ceshi():
     #time.sleep(0.01)  # 模拟数据的传输延迟
     recv_size += 1024  # 每次收1024
     recv_per = int(100 * recv_size / data_size)  # 接收的比例
-    progrees(recv_per, width=100)  # 调用进度条函数，进度条的宽度默认设置为30
+    progrees(recv_per, width=100)  # 调用进度条函数，进度条的宽度默认设置为100
   #打印进度条完毕
+  print("*******************************************函数start***************************************")
+  hanshu()
+  print("*******************************************函数end***************************************")
 ceshi()
