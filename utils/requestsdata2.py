@@ -1,7 +1,10 @@
 import requests
-from requests.exceptions import RequestException
+from requests import exceptions
+from requests.exceptions import RequestException, Timeout
 import re
 import json
+import urllib
+import time
 def requestsdata2():
   def get_one_page(url):
       try:
@@ -21,23 +24,38 @@ def requestsdata2():
       for i in item:
           # print(i[8])
           # print(i[8].strip())
-          yield {
-              'imgSrc': i[0],
-              'bookname': i[1],
-              'bookintro': i[2].strip(),
-              'bookUrl': i[6],
-              'bookZhuozhe': i[5],
-              'bookZhuozheUrl': i[4],
-              'bookType': i[7],
-              'bookStatus': i[8].strip(),
-              'bookTime': i[9].strip(),
-          }
+        print("开始下载图片："+i[0]+"\r\n")
+        # request = urllib.request.Request(i[0])
+        try:
+            # response = urllib.request.urlopen(request)
+            pic = requests.get(i[0],timeout=5)
+            date = time.time()
+            filename = "images/"+str(date)+'.jpeg'
+            print(filename)
+            fp = open(filename,'wb')
+            fp.write(pic.content)
+            fp.close()
+        except:
+            print("failed")
+            return "failed"
+
+        yield {
+            'imgSrc': i[0],
+            'bookname': i[1],
+            'bookintro': i[2].strip(),
+            'bookUrl': i[6],
+            'bookZhuozhe': i[5],
+            'bookZhuozheUrl': i[4],
+            'bookType': i[7],
+            'bookStatus': i[8].strip(),
+            'bookTime': i[9].strip(),
+        }
       # 祛除空格及换行符
       # print(item)
 
   def write_to_file(content):
-      with open('result.txt','a',encoding='utf-8') as f:
-          f.write(json.dumps(content,ensure_ascii=False)+'\n')
+      with open('result.text','a',encoding='utf-8') as f:
+          f.write(json.dumps(content,ensure_ascii=False)+',\n')
           f.close()
 
 

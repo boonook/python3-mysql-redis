@@ -1,4 +1,5 @@
 import time  # 引入time模块\
+import requests
 from utils.model1 import models1
 from utils.mysqlset import mysqlset
 from utils.redisset import redisset
@@ -10,6 +11,7 @@ from utils.zhuangshifu import zhuangshifu
 from utils.leideshiyong import leideshiyong
 # from utils.requestsdata import requestsdata
 from utils.requestsdata2 import requestsdata2
+from utils.downloadimg import downloadimg
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -65,14 +67,14 @@ def ceshi():
   print("*******************************************装饰符的使用end***************************************")
   # 类的使用
   print("*******************************************类的使用start***************************************")
-  leideshiyong()
+  # leideshiyong()
   print("*******************************************类的使用end***************************************")
   # 简易爬虫
   print("*******************************************简易爬虫start***************************************")
   # requestsdata()
   print("*******************************************简易爬虫end***************************************")
   # 简易爬虫2
-  print("*******************************************简易爬虫2start***************************************")
-  requestsdata2()
+  print("*******************************************简易爬取小说网站并将图片下载到本地***************************************")
+  # requestsdata2()
   print("*******************************************简易爬虫2end***************************************")
 ceshi()
