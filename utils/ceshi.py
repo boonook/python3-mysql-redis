@@ -12,6 +12,7 @@ from utils.leideshiyong import leideshiyong
 # from utils.requestsdata import requestsdata
 from utils.requestsdata2 import requestsdata2
 from utils.downloadimg import downloadimg
+from utils.readxlsx import readxlsxfile
 def ceshi():
   print('123123123')
   dict = {'a': 1, 'b': 2, 'b': '3'}
@@ -77,4 +78,5 @@ def ceshi():
   print("*******************************************简易爬取小说网站并将图片下载到本地***************************************")
   # requestsdata2()
   print("*******************************************简易爬虫2end***************************************")
+  readxlsxfile()
 ceshi()
